@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "314715871511",
+    "project_id": "vibecare-5caa3",
+    "storage_bucket": "vibecare-5caa3.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:314715871511:android:3b4ad0c2dd21a33d04ff52",
+        "android_client_info": {
+          "package_name": "com.example.wellcheck"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyChvN0U2JbM6OYemo5Ikt2eNwPAIyR99IU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
