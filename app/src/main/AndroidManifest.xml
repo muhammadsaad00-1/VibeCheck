@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools" >
+    xmlns:tools="http://schemas.android.com/tools">
 
     <application
         android:allowBackup="true"
@@ -11,17 +11,18 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.WellCheck"
-        tools:targetApi="31" >
-
-
-
+        tools:targetApi="31">
+        <activity
+            android:name=".Intro"
+            android:exported="true"
+        android:label="@string/title_activity_sign_up"
+        android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
         <!-- SignUp Activity -->
         <activity
             android:name=".SignUp"
             android:exported="true"
             android:label="@string/title_activity_sign_up"
-            android:theme="@style/Theme.AppCompat.Light.NoActionBar"/>
-        <!-- Login Activity with the LAUNCHER intent-filter -->
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar" /> <!-- Login Activity with the LAUNCHER intent-filter -->
         <activity
             android:name=".Login"
             android:exported="true"
@@ -29,13 +30,14 @@
             android:theme="@style/Theme.AppCompat.Light.NoActionBar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
+
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
-        </activity>
-
-        <!-- Additional Activity (Main) -->
+        </activity> <!-- Additional Activity (Main) -->
         <activity
             android:name=".Main"
             android:exported="false" />
+
     </application>
+
 </manifest>

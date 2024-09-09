@@ -47,7 +47,7 @@ class SignUp : AppCompatActivity() {
             .addOnCompleteListener(this) { task ->
                 if (task.isSuccessful) {
 //jump to home
-                    val intent= Intent(this,Main::class.java)
+                    val intent= Intent(this,Intro::class.java)
                     startActivity(intent)
                 } else {
                Toast.makeText(this@SignUp,"Some Error occured",Toast.LENGTH_SHORT).show()
