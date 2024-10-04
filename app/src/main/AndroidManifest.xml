@@ -2,6 +2,8 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools">
 
+    <uses-permission android:name="android.permission.INTERNET" />
+
     <application
         android:allowBackup="true"
         android:dataExtractionRules="@xml/data_extraction_rules"
@@ -12,32 +14,56 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.WellCheck"
         tools:targetApi="31">
+
+        <!-- Main Activity that will start first -->
         <activity
-            android:name=".Intro"
+            android:name=".Activity.Abc"
             android:exported="true"
-        android:label="@string/title_activity_sign_up"
-        android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
-        <!-- SignUp Activity -->
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
+
+        <!-- This is where you move the MAIN and LAUNCHER intent-filter -->
+        <activity
+            android:name=".Activity.Intro"
+            android:exported="true"
+            android:label="@string/title_activity_sign_up"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <!-- Uncomment if needed later for sign-up or login
         <activity
             android:name=".SignUp"
             android:exported="true"
             android:label="@string/title_activity_sign_up"
-            android:theme="@style/Theme.AppCompat.Light.NoActionBar" /> <!-- Login Activity with the LAUNCHER intent-filter -->
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
+
         <activity
             android:name=".Login"
             android:exported="true"
             android:label="WellCheck"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
+        </activity>
+        -->
 
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-        </activity> <!-- Additional Activity (Main) -->
+        <!-- Other activities in your app -->
         <activity
-            android:name=".Main"
+            android:name=".dash"
+            android:exported="false" />
+
+        <activity
+            android:name=".Dashboard"
+            android:exported="false" />
+
+        <activity
+            android:name=".MainLobby"
+            android:exported="false" />
+
+        <activity
+            android:name=".Activity.Main"
             android:exported="false" />
 
     </application>
-
 </manifest>

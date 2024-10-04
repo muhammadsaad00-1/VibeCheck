@@ -1,16 +1,15 @@
+/*
 package com.example.wellcheck
 
-import android.annotation.SuppressLint
 import android.content.Intent
 import android.os.Bundle
-import android.util.Log
 import android.widget.Button
 import android.widget.EditText
 import android.widget.Toast
 
 import androidx.appcompat.app.AppCompatActivity
+import com.example.wellcheck.Activity.Intro
 import com.google.firebase.auth.FirebaseAuth
-import com.google.firebase.auth.FirebaseUser
 
 class SignUp : AppCompatActivity() {
     private lateinit var edtName: EditText
@@ -47,11 +46,11 @@ class SignUp : AppCompatActivity() {
             .addOnCompleteListener(this) { task ->
                 if (task.isSuccessful) {
 //jump to home
-                    val intent= Intent(this,Intro::class.java)
+                    val intent= Intent(this, Intro::class.java)
                     startActivity(intent)
                 } else {
                Toast.makeText(this@SignUp,"Some Error occured",Toast.LENGTH_SHORT).show()
                 }
             }
     }
-}
+}*/
