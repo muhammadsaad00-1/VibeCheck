@@ -14,14 +14,18 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.WellCheck"
         tools:targetApi="31">
-
-        <!-- Main Activity that will start first -->
+        <activity
+            android:name=".Activity.TopDoctorsActivity"
+            android:exported="true"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
+        <activity
+            android:name=".Activity.DetailActivity"
+            android:exported="true"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar" /> <!-- Main Activity that will start first -->
         <activity
             android:name=".Activity.Abc"
             android:exported="true"
-            android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
-
-        <!-- This is where you move the MAIN and LAUNCHER intent-filter -->
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar" /> <!-- This is where you move the MAIN and LAUNCHER intent-filter -->
         <activity
             android:name=".Activity.Intro"
             android:exported="true"
@@ -29,11 +33,12 @@
             android:theme="@style/Theme.AppCompat.Light.NoActionBar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
+
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-
-        <!-- Uncomment if needed later for sign-up or login
+        <!--
+ Uncomment if needed later for sign-up or login
         <activity
             android:name=".SignUp"
             android:exported="true"
@@ -47,23 +52,19 @@
             android:theme="@style/Theme.AppCompat.Light.NoActionBar">
         </activity>
         -->
-
         <!-- Other activities in your app -->
         <activity
             android:name=".dash"
             android:exported="false" />
-
         <activity
             android:name=".Dashboard"
             android:exported="false" />
-
         <activity
             android:name=".MainLobby"
             android:exported="false" />
-
         <activity
             android:name=".Activity.Main"
             android:exported="false" />
-
     </application>
+
 </manifest>

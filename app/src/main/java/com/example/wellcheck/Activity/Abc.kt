@@ -1,5 +1,6 @@
 package com.example.wellcheck.Activity
 
+import android.content.Intent
 import android.os.Bundle
 import android.view.View
 import androidx.appcompat.app.AppCompatActivity
@@ -36,6 +37,10 @@ class Abc : AppCompatActivity() {
 
             })
             viewModel.loadDoctors()
+
+            doctorListTxt.setOnClickListener{
+                startActivity(Intent(this@Abc,TopDoctorsActivity::class.java))
+            }
         }
     }
 

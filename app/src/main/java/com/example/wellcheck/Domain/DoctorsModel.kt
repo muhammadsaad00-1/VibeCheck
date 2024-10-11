@@ -12,10 +12,10 @@ data class DoctorsModel(
     val Special:String="",
     val Location:String="",
     val Mobile:String="",
-    val patiens:String="",
+    val Patiens:String="",
     val Site:String="",
     val Rating:Double=0.0,
-    val Exprience:Int=0
+    val Expriense:Double=0.0
 ):Parcelable{
     constructor(parcel: Parcel) : this(
         parcel.readInt(),
@@ -29,7 +29,7 @@ data class DoctorsModel(
         parcel.readString().toString(),
         parcel.readString().toString(),
         parcel.readDouble(),
-        parcel.readInt()
+        parcel.readDouble()
     ) {
     }
 
@@ -42,10 +42,10 @@ data class DoctorsModel(
         parcel.writeString(Special)
         parcel.writeString(Location)
         parcel.writeString(Mobile)
-        parcel.writeString(patiens)
+        parcel.writeString(Patiens)
         parcel.writeString(Site)
         parcel.writeDouble(Rating)
-        parcel.writeInt(Exprience)
+        parcel.writeDouble(Expriense)
     }
 
     override fun describeContents(): Int {
