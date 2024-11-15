@@ -6,6 +6,10 @@ import android.widget.Button
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import com.example.wellcheck.R
+import androidx.drawerlayout.widget.DrawerLayout
+import android.view.MenuItem
+import androidx.appcompat.app.ActionBarDrawerToggle
+
 
 class Intro : AppCompatActivity() {
     private lateinit var btnLetsGo: Button  // Use Button instead of EditText

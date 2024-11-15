@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+
+    android:padding="16dp"
+    android:background="#f0f0f0"
+    tools:context=".SettingsFragment">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <!-- Heading -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="BMI Calculator"
+            android:textSize="26sp"
+            android:textStyle="bold"
+            android:textColor="#3b5998"
+            android:layout_gravity="center_horizontal"
+            android:paddingBottom="24dp"/>
+
+        <!-- Height Input -->
+        <EditText
+            android:id="@+id/heightInput"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Enter height in feet"
+            android:inputType="numberDecimal"
+            android:padding="12dp"
+            android:backgroundTint="#3b5998"
+            android:textColorHint="#666"
+            android:textColor="#000"
+            android:layout_marginBottom="16dp"/>
+
+        <!-- Weight Input -->
+        <EditText
+            android:id="@+id/weightInput"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Enter weight in kg"
+            android:inputType="numberDecimal"
+            android:padding="12dp"
+            android:backgroundTint="#3b5998"
+            android:textColorHint="#666"
+            android:textColor="#000"
+            android:layout_marginBottom="24dp"/>
+
+        <!-- Calculate Button -->
+        <Button
+            android:id="@+id/calculateButton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Calculate BMI"
+            android:textStyle="bold"
+            android:textColor="#ffffff"
+            android:backgroundTint="#3b5998"
+            android:layout_marginBottom="24dp"
+            android:padding="14dp"/>
+
+        <!-- Result and Tips Card -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:background="@drawable/card_background"
+            android:padding="20dp"
+            android:layout_marginTop="24dp"
+            android:elevation="8dp">
+
+            <!-- BMI Result -->
+            <TextView
+                android:id="@+id/resultText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                android:textColor="#3b5998"
+                android:layout_gravity="center_horizontal"
+                android:text="Your BMI result will appear here"
+                android:paddingBottom="12dp"/>
+
+            <!-- Health Tips -->
+            <TextView
+                android:id="@+id/tipsText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="16sp"
+                android:textColor="#555"
+                android:text="Health tips will appear here"
+                android:paddingTop="8dp"/>
+        </LinearLayout>
+    </LinearLayout>
+</ScrollView>

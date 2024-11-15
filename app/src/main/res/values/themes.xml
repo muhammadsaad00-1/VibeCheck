@@ -1,5 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-    <style name="Theme.WellCheck" parent="android:Theme.Material.Light.NoActionBar" />
+    <style name="Theme.WellCheck" parent="android:Theme.Material.Light.NoActionBar" >
+        <item name="colorPrimary">@color/blue</item>
+        <item name="colorPrimaryVariant">@color/blue</item>
+        <item name="android:statusBarColor">@color/blue</item>
+    </style>
 </resources>
