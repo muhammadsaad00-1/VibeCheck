@@ -1,4 +1,4 @@
-/*
+
 package com.example.wellcheck
 
 import android.content.Intent
@@ -50,7 +50,7 @@ class Login : AppCompatActivity() {
         mAuth.signInWithEmailAndPassword(email, password)
             .addOnCompleteListener(this) { task ->
                 if (task.isSuccessful) {
-                    val intent= Intent(this, Intro::class.java)
+                    val intent= Intent(this, TestPage::class.java)
                     startActivity(intent)
                 } else {
                     Toast.makeText(this@Login,"User don't exist", Toast.LENGTH_SHORT).show()
@@ -58,4 +58,4 @@ class Login : AppCompatActivity() {
                 }
             }
     }
-}*/
+}

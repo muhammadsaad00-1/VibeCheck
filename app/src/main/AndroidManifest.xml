@@ -3,6 +3,8 @@
     xmlns:tools="http://schemas.android.com/tools">
 
     <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
 
     <application
         android:allowBackup="true"
@@ -15,11 +17,21 @@
         android:theme="@style/Theme.WellCheck"
         tools:targetApi="31">
         <activity
+            android:name=".UploadFiles"
+            android:exported="true"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar"/>
+        <activity
+            android:name=".UpdateProfile"
+            android:exported="true"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar"/>
+        <activity
+            android:name=".TestPage"
+            android:exported="true"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar"/>
+        <activity
             android:name=".Activity.SearchActivity"
             android:exported="true"
-            android:theme="@style/Theme.AppCompat.Light.NoActionBar">
-
-        </activity>
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
         <activity
             android:name=".Activity.TopDoctorsActivity"
             android:exported="true"
@@ -31,23 +43,29 @@
         <activity
             android:name=".Activity.Abc"
             android:exported="true"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
+        <activity
+            android:name=".SignUp"
+            android:exported="true"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar">
 
         </activity> <!-- This is where you move the MAIN and LAUNCHER intent-filter -->
-        <activity
-            android:name=".Activity.Intro"
-            android:exported="true"
-            android:label="@string/title_activity_sign_up"
-            android:theme="@style/Theme.AppCompat.Light.NoActionBar">
+        <!--
+ <activity
+             android:name=".Activity.Intro"
+             android:exported="true"
+             android:label="@string/title_activity_sign_up"
+             android:theme="@style/Theme.AppCompat.Light.NoActionBar">
 
-            <!--
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
 
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-            -->
+             <intent-filter>
+                 <action android:name="android.intent.action.MAIN" />
+
+                 <category android:name="android.intent.category.LAUNCHER" />
+             </intent-filter>
+
         </activity>
+        -->
         <!--
  Uncomment if needed later for sign-up or login
         <activity
@@ -65,15 +83,19 @@
         -->
         <!-- Other activities in your app -->
         <activity
-            android:name=".dash"
+            android:name=".Login"
             android:exported="true"
-            android:theme="@style/Theme.AppCompat.Light.NoActionBar">
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity
+            android:name=".dash"
+            android:exported="true"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
         <activity
             android:name=".Dashboard"
             android:exported="false" />

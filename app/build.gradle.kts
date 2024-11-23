@@ -76,6 +76,7 @@ dependencies {
     implementation(libs.androidx.constraintlayout)
     implementation(libs.support.annotations)
     implementation(libs.androidx.annotation)
+    implementation(libs.firebase.storage.ktx)
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
