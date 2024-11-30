@@ -21,16 +21,34 @@ class TopDoctorsActivity : AppCompatActivity() {
         innitTopDoctors()
     }
     private fun innitTopDoctors() {
-        binding.apply {
-            progressBarTopDoc.visibility= View.VISIBLE
-            viewModel.doc.observe(this@TopDoctorsActivity, Observer{
-                viewTopDoctorList.layoutManager=
-                    LinearLayoutManager(this@TopDoctorsActivity, LinearLayoutManager.VERTICAL,false)
-                viewTopDoctorList.adapter= TopDoctorAdapter(it)
-                progressBarTopDoc.visibility= View.GONE
-            })
-            viewModel.loadDoctors()
-            backBtn.setOnClickListener { finish() }
-        }
+    binding.apply {
+        progressBarTopDoc.visibility= View.VISIBLE
+        viewModel.doc.observe(this@TopDoctorsActivity, Observer{
+            viewTopDoctorList.layoutManager=
+                LinearLayoutManager(this@TopDoctorsActivity, LinearLayoutManager.VERTICAL,false)
+            viewTopDoctorList.adapter= TopDoctorAdapter(it)
+            progressBarTopDoc.visibility= View.GONE
+        })
+        viewModel.loadDoctors()
+        backBtn.setOnClickListener { finish() }
     }
+}
+//    private fun innitTopDoctors() {
+//    binding.apply {
+//        viewTopDoctorList.layoutManager =
+//            LinearLayoutManager(this@TopDoctorsActivity, LinearLayoutManager.VERTICAL, false)
+//        val adapter = TopDoctorAdapter(mutableListOf()) // Empty list initially
+//        viewTopDoctorList.adapter = adapter
+//
+//        viewModel.doc.observe(this@TopDoctorsActivity, Observer { doctors ->
+//            adapter.items.clear()
+//            adapter.items.addAll(doctors) // Update data in adapter
+//            adapter.notifyDataSetChanged()
+//            progressBarTopDoc.visibility = View.GONE
+//        })
+//        viewModel.loadDoctors()
+//        backBtn.setOnClickListener { finish() }
+//    }
+//}
+
 }

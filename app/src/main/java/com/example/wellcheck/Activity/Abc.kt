@@ -131,6 +131,7 @@ import androidx.lifecycle.Observer
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.wellcheck.Adapter.CategoryAdapter
 import com.example.wellcheck.Adapter.TopDoctorAdapter
+import com.example.wellcheck.Activity.NaviActivity
 import com.example.wellcheck.R
 import com.example.wellcheck.ViewModel.MainViewModel
 import com.example.wellcheck.databinding.ActivityAbcBinding
@@ -142,9 +143,15 @@ class Abc : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_abc)  // Ensure you have the correct layout file
+
+        // Initialize View Binding
         binding = ActivityAbcBinding.inflate(layoutInflater)
         setContentView(binding.root)
+
+        // Set click listener for the navigation button
+        binding.btnNav.setOnClickListener {
+            startActivity(Intent(this@Abc, NaviActivity::class.java))
+        }
         initCategory()
         innitTopDoctors()
     }

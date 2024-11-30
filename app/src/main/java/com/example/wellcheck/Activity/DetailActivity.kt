@@ -8,6 +8,7 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import com.bumptech.glide.Glide
+import com.example.wellcheck.Domain.Doctors
 import com.example.wellcheck.Domain.DoctorsModel
 import com.example.wellcheck.R
 import com.example.wellcheck.databinding.ActivityDetailBinding
@@ -15,7 +16,7 @@ import java.util.jar.Attributes.Name
 
 class DetailActivity : AppCompatActivity() {
     private lateinit var binding: ActivityDetailBinding
-    private lateinit var item:DoctorsModel
+    private lateinit var item: Doctors
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding=ActivityDetailBinding.inflate(layoutInflater)
@@ -28,48 +29,58 @@ class DetailActivity : AppCompatActivity() {
         item=intent.getParcelableExtra("object")!!
 
         binding.apply {
-            titleTxt.text=item.Name
-            specialTxt.text=item.Special
-            patientsTxt.text=item.Patiens
-            bio.text=item.Biography
-            addressTxt.text=item.Address
-            experienceTxt.text=item.Expriense.toString()+" Years"
-            ratingTxt.text="${item.Rating}"
+
+            titleTxt.text=item.name
+            specialTxt.text=item.special
+            patientsTxt.text=item.patiens
+            bio.text=item.biography
+            addressTxt.text=item.address
+            experienceTxt.text=item.expriense.toString()+" Years"
+            ratingTxt.text="${item.rating}"
             backBtn.setOnClickListener{finish()}
             webisteBtn.setOnClickListener {
                 val i =Intent(Intent.ACTION_VIEW)
-                i.setData(Uri.parse(item.Site))
+                i.setData(Uri.parse(item.site))
                 startActivity(i)
             }
 
             messageBtn.setOnClickListener {
-                val uri=Uri.parse("smsto:${item.Mobile}")
+                val uri=Uri.parse("smsto:${item.mobile}")
                 val intent=Intent(Intent.ACTION_SENDTO,uri)
                 intent.putExtra("sms_body","the SMS text")
                 startActivity(intent)
 
             }
             CallBtn.setOnClickListener {
-                val uri ="tel:"+item.Mobile.trim()
+                val uri ="tel:"+item.mobile.trim()
                 val intent=Intent(Intent.ACTION_DIAL,Uri.parse(uri))
                 startActivity(intent)
             }
             directionBtn.setOnClickListener {
-                val intent=Intent(Intent.ACTION_VIEW,Uri.parse(item.Location))
+                val intent=Intent(Intent.ACTION_VIEW,Uri.parse(item.location))
                 startActivity(intent)
             }
             shareBtn.setOnClickListener {
                 val intent=Intent(Intent.ACTION_SEND)
                 intent.setType("text/plain")
-                intent.putExtra(Intent.EXTRA_SUBJECT,item.Name)
+                intent.putExtra(Intent.EXTRA_SUBJECT,item.name)
                 intent.putExtra(
                     Intent.EXTRA_TEXT,
-                    item.Name + " " + item.Address + " " + item.Mobile
+                    item.name + " " + item.address + " " + item.mobile
                 )
                 startActivity(Intent.createChooser(intent,"Choose one"))
             }
+            makeBtn.setOnClickListener {
+                // Navigate to MakeAppointmentActivity
+                val intent = Intent(this@DetailActivity, MakeAppointmentActivity::class.java)
+                intent.putExtra("doctorId", item.id)
+                intent.putExtra("doctorName", item.name)// Pass doctor ID or any relevant info
+                startActivity(intent)
+            }
+
+
 Glide.with(this@DetailActivity)
-    .load(item.Picture)
+    .load(item.picture)
     .into(img)
 
 

@@ -9,11 +9,13 @@ import com.bumptech.glide.Glide
 import com.bumptech.glide.load.resource.bitmap.CenterCrop
 import com.bumptech.glide.request.RequestOptions
 import com.example.wellcheck.Activity.DetailActivity
+import com.example.wellcheck.Domain.Doctors
 import com.example.wellcheck.databinding.ViewholderTopDoctorBinding
 import com.example.wellcheck.Domain.DoctorsModel
+import com.example.wellcheck.seeProfile
 
 
-class TopDoctorAdapter(val items: MutableList<DoctorsModel>): RecyclerView.Adapter<TopDoctorAdapter.Viewholder>() {
+class TopDoctorAdapter(val items: MutableList<Doctors>): RecyclerView.Adapter<TopDoctorAdapter.Viewholder>() {
 
     private var context:Context?= null
      class Viewholder(val binding: ViewholderTopDoctorBinding) : RecyclerView.ViewHolder(binding.root)
@@ -25,13 +27,13 @@ class TopDoctorAdapter(val items: MutableList<DoctorsModel>): RecyclerView.Adapt
     }
 
     override fun onBindViewHolder(holder: TopDoctorAdapter.Viewholder, position: Int) {
-        holder.binding.nameTxt.text=items[position].Name
-         holder.binding.specialTxt.text=items[position].Special
-        holder.binding.scoreTxt.text=items[position].Rating.toString()
-        holder.binding.yearTxt.text=items[position].Expriense.toString()+"Year"
+        holder.binding.nameTxt.text=items[position].name
+         holder.binding.specialTxt.text=items[position].special
+        holder.binding.scoreTxt.text=items[position].rating.toString()
+        holder.binding.yearTxt.text=items[position].expriense.toString()+"Year"
 
         Glide.with(holder.itemView.context)
-            .load(items[position].Picture)
+            .load(items[position].picture)
             .apply{RequestOptions().transform(CenterCrop())}
             .into(holder.binding.img)
 

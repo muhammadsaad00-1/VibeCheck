@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:padding="16dp"
+    android:background="@drawable/rounded_border"
+    android:layout_margin="8dp"
+    android:backgroundTint="#1976D2"> <!-- Blue Background -->
+
+<TextView
+android:id="@+id/tvDoctorName"
+android:layout_width="match_parent"
+android:layout_height="wrap_content"
+android:text="Doctor: Dr. XYZ"
+android:textSize="18sp"
+android:textColor="#FFFFFF"
+    android:layout_marginBottom="8dp"
+    android:padding="8dp"
+    android:background="@drawable/rounded_item_background" /> <!-- Text background -->
+
+<TextView
+android:id="@+id/tvDate"
+android:layout_width="match_parent"
+android:layout_height="wrap_content"
+android:text="Date: 15-11-2024"
+android:textSize="16sp"
+android:textColor="#FFFFFF"
+android:layout_marginBottom="8dp"
+android:padding="8dp"
+android:background="@drawable/rounded_item_background" />
+
+<TextView
+android:id="@+id/tvTime"
+android:layout_width="match_parent"
+android:layout_height="wrap_content"
+android:text="Time: 10:30"
+android:textSize="16sp"
+android:textColor="#FFFFFF"
+android:layout_marginBottom="8dp"
+android:padding="8dp"
+android:background="@drawable/rounded_item_background" />
+
+<TextView
+android:id="@+id/tvStatus"
+android:layout_width="match_parent"
+android:layout_height="wrap_content"
+android:text="Status: Pending"
+android:textSize="16sp"
+android:textColor="#FFFFFF"
+android:layout_marginTop="8dp"
+android:padding="8dp"
+android:background="@drawable/rounded_item_background" />
+
+    </LinearLayout>
+

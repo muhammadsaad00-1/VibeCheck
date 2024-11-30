@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/lavender"
+    android:gravity="center"
+    android:orientation="vertical"
+    android:padding="8dp">
+
+    <Button
+
+        android:id="@+id/btn_home"
+        android:layout_width="match_parent"
+        android:layout_height="67dp"
+        android:layout_margin="8dp"
+        android:backgroundTint="@color/white"
+
+        android:text="Home"
+        android:textColor="#000000"
+        android:textStyle="bold" />
+
+
+    <Button
+        android:id="@+id/btn_bmi_calculator"
+        android:layout_width="match_parent"
+        android:layout_height="67dp"
+        android:layout_margin="8dp"
+        android:backgroundTint="@color/white"
+
+        android:text="BMI Calculator"
+        android:textColor="#000000"
+        android:textStyle="bold" /> <!-- Icon added -->
+
+    <Button
+        android:id="@+id/btn_upload_report"
+        android:layout_width="match_parent"
+        android:layout_height="67dp"
+        android:layout_margin="8dp"
+        android:backgroundTint="@color/white"
+
+        android:text="Upload Report"
+        android:textColor="#000000"
+        android:textStyle="bold" /> <!-- Icon added -->
+    <!-- Profile Button -->
+    <!-- Icon added -->
+
+    <!-- Daily Tips Button -->
+    <Button
+        android:id="@+id/btn_profile"
+        android:layout_width="match_parent"
+        android:layout_height="67dp"
+        android:layout_margin="8dp"
+        android:backgroundTint="@color/white"
+
+        android:text="Profile"
+        android:textColor="#000000"
+        android:textStyle="bold" />
+
+    <Button
+        android:id="@+id/btn_tip"
+        android:layout_width="match_parent"
+        android:layout_height="67dp"
+        android:layout_margin="8dp"
+        android:backgroundTint="@color/white"
+
+        android:text="Daily Tips"
+        android:textColor="#000000"
+        android:textStyle="bold" /> <!-- Icon added -->
+
+    <!-- Donate to App Button -->
+    <Button
+        android:id="@+id/btn_donate"
+        android:layout_width="match_parent"
+        android:layout_height="67dp"
+        android:layout_margin="8dp"
+        android:backgroundTint="@color/white"
+        android:text="Donate to App"
+        android:textColor="#000000"
+        android:textStyle="bold"
+        /> <!-- Icon added -->
+
+    <!-- About Us Button -->
+    <Button
+        android:id="@+id/btn_aboutus"
+        android:layout_width="match_parent"
+        android:layout_height="67dp"
+        android:layout_margin="8dp"
+        android:backgroundTint="@color/white"
+        android:text="About us"
+        android:textColor="#000000"
+        android:textStyle="bold"
+        />
+
+    <Button
+        android:id="@+id/btn_reportissue"
+        android:layout_width="match_parent"
+        android:layout_height="67dp"
+        android:layout_margin="8dp"
+        android:backgroundTint="@color/white"
+        android:text="Report an Issue"
+        android:textColor="#000000"
+        android:textStyle="bold"
+        />
+
+    <!-- Icon added -->
+
+</LinearLayout>

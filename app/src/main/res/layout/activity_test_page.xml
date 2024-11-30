@@ -74,6 +74,26 @@
                 android:text="Upload Files"
                 android:backgroundTint="@color/purple_200"
                 android:textColor="@android:color/white" />
+
         </LinearLayout>
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center"
+            android:layout_marginTop="20dp">
+
+        </LinearLayout>
+
+        <Button
+            android:id="@+id/btnSeeAppointments"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="100dp"
+            android:backgroundTint="@color/purple_200"
+            android:text="See Appointments"
+            android:textColor="@android:color/white">
+
+        </Button>
     </LinearLayout>
 </ScrollView>

@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/lavender"
+    android:padding="16dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:gravity="center"
+        android:weightSum="1"
+        android:layout_centerInParent="true">
+
+        <!-- Title -->
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Support Our App"
+            android:textSize="28sp"
+            android:textStyle="bold"
+            android:gravity="center"
+            android:textColor="@color/white"
+            android:layout_marginBottom="16dp"
+            android:layout_weight="0.2" />
+        <ImageView
+            android:id="@+id/img_about_us"
+            android:layout_width="208dp"
+            android:layout_height="184dp"
+            android:layout_marginBottom="16dp"
+            android:background="@drawable/circle1"
+            android:contentDescription="About Us Image"
+            android:scaleType="centerCrop"
+            android:src="@drawable/vc" />
+
+        <!-- Description -->
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="16dp"
+            android:layout_weight="0.3"
+            android:gravity="center"
+            android:textStyle="bold"
+            android:text="We aim to improve your health and well-being with CareVibe. Your donations help us keep the app free and up-to-date. Please support our work!"
+            android:textColor="@color/white"
+            android:textSize="22sp" />
+
+        <!-- Donate Button -->
+        <Button
+            android:id="@+id/btn_donate"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:text="Donate Now"
+            android:textSize="18sp"
+            android:textColor="@color/black"
+            android:backgroundTint="@color/white"
+            android:textStyle="bold"
+            android:padding="12dp"
+            android:layout_weight="0.2" />
+
+        <!-- Payment Information (Initially Hidden) -->
+        <LinearLayout
+            android:id="@+id/details_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:visibility="gone"
+            android:layout_marginTop="20dp">
+
+            <!-- JazzCash Number -->
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="JazzCash Number: 1234567890"
+                android:textSize="22sp"
+                android:textColor="@color/white"
+                android:gravity="center"/>
+
+            <!-- SadaPay Number -->
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="SadaPay Number: 0987654321"
+                android:textSize="22sp"
+                android:textColor="@color/white"
+                android:gravity="center"/>
+
+            <!-- Thank You Message -->
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Thank you for your support!"
+                android:textSize="30sp"
+                android:textColor="@color/white"
+                android:gravity="center"
+                android:textStyle="bold"
+                android:layout_marginTop="20dp"/>
+        </LinearLayout>
+
+        <!-- Empty space to balance the layout -->
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="0.1"/>
+    </LinearLayout>
+</ScrollView>

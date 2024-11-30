@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="16dp"
+    android:background="#FFFFFF">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:gravity="center_horizontal">
+
+        <!-- Profile Picture -->
+
+
+        <!-- Doctor Name -->
+        <TextView
+            android:id="@+id/tvName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Doctor Name"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            android:textColor="#333333"
+            android:layout_marginBottom="8dp" />
+
+        <!-- Biography -->
+        <TextView
+            android:id="@+id/tvBiography"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Biography not available"
+            android:textSize="16sp"
+            android:textColor="#666666"
+            android:layout_marginBottom="16dp" />
+
+        <!-- Address -->
+        <TextView
+            android:id="@+id/tvAddress"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Address not available"
+            android:textSize="16sp"
+            android:textColor="#666666"
+            android:layout_marginBottom="8dp" />
+
+        <!-- Specialization -->
+        <TextView
+            android:id="@+id/tvSpecial"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Specialization not mentioned"
+            android:textSize="16sp"
+            android:textColor="#666666"
+            android:layout_marginBottom="8dp" />
+
+        <!-- Location -->
+        <TextView
+            android:id="@+id/tvLocation"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Location not available"
+            android:textSize="16sp"
+            android:textColor="#666666"
+            android:layout_marginBottom="8dp" />
+
+        <!-- Mobile -->
+        <TextView
+            android:id="@+id/tvMobile"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Mobile not available"
+            android:textSize="16sp"
+            android:textColor="#666666"
+            android:layout_marginBottom="8dp" />
+
+        <!-- Patients -->
+        <TextView
+            android:id="@+id/tvPatients"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="No patients data"
+            android:textSize="16sp"
+            android:textColor="#666666"
+            android:layout_marginBottom="8dp" />
+
+        <!-- Website -->
+        <TextView
+            android:id="@+id/tvSite"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="No site information"
+            android:textSize="16sp"
+            android:textColor="#666666"
+            android:layout_marginBottom="8dp" />
+
+        <!-- Rating -->
+        <TextView
+            android:id="@+id/tvRating"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Rating: Not rated"
+            android:textSize="16sp"
+            android:textColor="#666666"
+            android:layout_marginBottom="8dp" />
+
+        <!-- Experience -->
+        <TextView
+            android:id="@+id/tvExperience"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Experience: 0 years"
+            android:textSize="16sp"
+            android:textColor="#666666"
+            android:layout_marginBottom="16dp" />
+        <Button
+            android:id="@+id/btnn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Go to Good Display"
+            android:textColor="@color/blue"
+            android:background="@color/lavender"
+            android:layout_marginBottom="16dp" />
+        <Button
+            android:id="@+id/btnnn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text=" Go to Edit Profile "
+            android:textColor="@color/blue"
+            android:background="@color/lavender"
+            android:layout_marginBottom="16dp" />
+        <Button
+            android:id="@+id/bt"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Go to Appointment"
+            android:textColor="@color/blue"
+            android:background="@color/lavender"
+            android:layout_marginBottom="16dp" />
+
+    </LinearLayout>
+
+</ScrollView>

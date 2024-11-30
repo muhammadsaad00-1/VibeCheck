@@ -5,6 +5,7 @@ import android.os.Bundle
 import android.widget.Button
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
+import com.example.wellcheck.Activity.AT
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.FirebaseDatabase
 
@@ -17,6 +18,7 @@ class TestPage : AppCompatActivity() {
     private lateinit var tvContact: TextView
     private lateinit var btnEditProfile: Button
     private lateinit var btnUploadFiles: Button
+    private lateinit var btnSeeAppointments: Button
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -31,7 +33,7 @@ class TestPage : AppCompatActivity() {
         tvContact = findViewById(R.id.tvContact)
         btnEditProfile = findViewById(R.id.btnEditProfile)
         btnUploadFiles = findViewById(R.id.btnUploadFiles)
-
+        btnSeeAppointments= findViewById(R.id.btnSeeAppointments)
         // Load Patient Info
         loadPatientInfo()
 
@@ -43,6 +45,11 @@ class TestPage : AppCompatActivity() {
         // Upload Files Button Click
         btnUploadFiles.setOnClickListener {
             startActivity(Intent(this, UploadFiles::class.java))
+        }
+        btnSeeAppointments.setOnClickListener {
+            val intent = Intent(this, AT::class.java)
+            startActivity(intent)
+
         }
     }
 
