@@ -130,39 +130,12 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <!--
- Uncomment if needed later for sign-up or login
-        <activity
-            android:name=".SignUp"
-            android:exported="true"
-            android:label="@string/title_activity_sign_up"
-            android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
 
         <activity
             android:name=".Login"
             android:exported="true"
-            android:label="WellCheck"
-            android:theme="@style/Theme.AppCompat.Light.NoActionBar">
-        </activity>
-        -->
-        <!-- Other activities in your app -->
-        <activity
-            android:name=".Login"
-            android:exported="true"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar"></activity>
-        <activity
-            android:name=".dash"
-            android:exported="true"
-            android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
-        <activity
-            android:name=".Dashboard"
-            android:exported="false" />
-        <activity
-            android:name=".MainLobby"
-            android:exported="false" />
-        <activity
-            android:name=".Activity.Main"
-            android:exported="false" />
+
     </application>
 
 </manifest>

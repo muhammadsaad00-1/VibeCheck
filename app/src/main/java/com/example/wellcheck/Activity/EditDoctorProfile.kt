@@ -150,7 +150,7 @@ class EditDoctorProfile : AppCompatActivity() {
         }
     }
 
-    // Handle image picker result
+
     private val imagePickerLauncher =
         registerForActivityResult(ActivityResultContracts.StartActivityForResult()) { result ->
             if (result.resultCode == RESULT_OK) {
@@ -159,6 +159,6 @@ class EditDoctorProfile : AppCompatActivity() {
             }
         }
 
-    // Handle back button press
+
 
 }

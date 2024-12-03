@@ -7,8 +7,7 @@ import android.widget.ImageView
 import androidx.appcompat.app.AppCompatActivity
 import com.example.wellcheck.Domain.Doctors
 import com.example.wellcheck.R
-import com.example.wellcheck.TestPage
-import com.example.wellcheck.west
+
 
 
 class DocNav : AppCompatActivity() {
@@ -47,12 +46,11 @@ class DocNav : AppCompatActivity() {
         }
 
 
-
-        // Uncomment and update when Daily Tips Activity is available
-        // btnTip.setOnClickListener {
-        //     val intent = Intent(this, DailyTipsActivity::class.java)
-        //     startActivity(intent)
-        // }
+        val btnTip = findViewById<Button>(R.id.btn_tip)
+        btnTip.setOnClickListener {
+             val intent = Intent(this, PostTipActivity::class.java)
+            startActivity(intent)
+         }
 
         btnDonate.setOnClickListener {
             val intent = Intent(this, Donate::class.java)

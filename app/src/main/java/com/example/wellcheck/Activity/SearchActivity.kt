@@ -6,7 +6,7 @@ import androidx.appcompat.widget.SearchView
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.wellcheck.Adapter.TopDoctorAdapter2
 import com.example.wellcheck.Domain.Doctors
-import com.example.wellcheck.Domain.DoctorsModel
+
 import com.example.wellcheck.databinding.ActivitySearchBinding
 import com.google.firebase.database.*
 

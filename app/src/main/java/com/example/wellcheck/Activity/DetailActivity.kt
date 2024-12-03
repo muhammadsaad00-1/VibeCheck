@@ -3,16 +3,13 @@ package com.example.wellcheck.Activity
 import android.content.Intent
 import android.net.Uri
 import android.os.Bundle
-import androidx.activity.enableEdgeToEdge
+
 import androidx.appcompat.app.AppCompatActivity
-import androidx.core.view.ViewCompat
-import androidx.core.view.WindowInsetsCompat
+
 import com.bumptech.glide.Glide
 import com.example.wellcheck.Domain.Doctors
-import com.example.wellcheck.Domain.DoctorsModel
-import com.example.wellcheck.R
+
 import com.example.wellcheck.databinding.ActivityDetailBinding
-import java.util.jar.Attributes.Name
 
 class DetailActivity : AppCompatActivity() {
     private lateinit var binding: ActivityDetailBinding

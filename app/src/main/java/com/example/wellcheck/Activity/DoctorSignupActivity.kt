@@ -6,11 +6,11 @@ import android.net.Uri
 import android.os.Bundle
 import android.widget.*
 import androidx.appcompat.app.AppCompatActivity
-import com.bumptech.glide.Glide
+
 import com.example.wellcheck.Domain.Doctors
 import com.example.wellcheck.PartialLogin
 import com.example.wellcheck.R
-import com.example.wellcheck.west
+
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.FirebaseDatabase
 import com.google.firebase.storage.FirebaseStorage

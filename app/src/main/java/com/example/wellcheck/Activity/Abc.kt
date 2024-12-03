@@ -10,8 +10,7 @@ import androidx.lifecycle.Observer
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.wellcheck.Adapter.CategoryAdapter
 import com.example.wellcheck.Adapter.TopDoctorAdapter
-import com.example.wellcheck.Activity.NaviActivity
-import com.example.wellcheck.R
+
 import com.example.wellcheck.ViewModel.MainViewModel
 import com.example.wellcheck.databinding.ActivityAbcBinding
 

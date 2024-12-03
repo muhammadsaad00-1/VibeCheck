@@ -57,6 +57,7 @@ class MainViewModel(): ViewModel() {
                 }
                 _doc.value = lists
             }
+
             override fun onCancelled(error: DatabaseError) {
                 TODO("Not yet implemented")
             }
@@ -64,32 +65,5 @@ class MainViewModel(): ViewModel() {
         })
 
 
-
-
     }
-/**/
- /*  fun loadDoctors() {*/
- /*      val Ref = firebaseDatabase.getReference("Doctors")*/
- /*      Ref.addValueEventListener(object : ValueEventListener {*/
- /*          override fun onDataChange(snapshot: DataSnapshot) {*/
- /*              val lists = mutableListOf<DoctorsModel>()*/
- /*              for (childSnapshot in snapshot.children) {*/
- /*                  try {*/
- /*                      val doctor = childSnapshot.getValue(DoctorsModel::class.java)*/
- /*                      if (doctor != null) {*/
- /*                          doctor.Id = doctor.Id ?: childSnapshot.key*/
- /*                          lists.add(doctor)*/
- /*                      }*/
- /*                  } catch (e: Exception) {*/
- /*                      // Log the error and skip the problematic entry*/
- /*                      Log.e("MainViewModel", "Error parsing doctor: ${e.message}")*/
- /*                  }*/
- /*              }*/
- /*              _doc.value = lists*/
- /*          }*/
-/**/
- /*          override fun onCancelled(error: DatabaseError) {*/
- /*          }*/
- /*      }   )*/
- /*    }*/
 }

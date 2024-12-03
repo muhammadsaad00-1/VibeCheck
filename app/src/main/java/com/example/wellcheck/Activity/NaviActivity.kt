@@ -6,12 +6,7 @@ import android.os.Bundle
 import android.widget.Button
 import androidx.appcompat.app.AppCompatActivity
 import com.example.wellcheck.R
-import com.example.wellcheck.Activity.Abc
-import com.example.wellcheck.Activity.Issue
-import com.example.wellcheck.Activity.Bmi
-import com.example.wellcheck.Activity.Aboutus
-import com.example.wellcheck.Activity.Donate
-import com.example.wellcheck.Domain.PillReminder
+
 import com.example.wellcheck.TestPage
 import com.example.wellcheck.UploadFiles
 

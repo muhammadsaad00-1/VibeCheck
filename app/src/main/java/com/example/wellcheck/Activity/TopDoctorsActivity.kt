@@ -1,15 +1,13 @@
 package com.example.wellcheck.Activity
 import android.os.Bundle
 import android.view.View
-import androidx.activity.enableEdgeToEdge
+
 import androidx.appcompat.app.AppCompatActivity
-import androidx.core.view.ViewCompat
-import androidx.core.view.WindowInsetsCompat
+
 import androidx.lifecycle.Observer
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.wellcheck.Adapter.TopDoctorAdapter
-import com.example.wellcheck.Adapter.TopDoctorAdapter2
-import com.example.wellcheck.R
+
 import com.example.wellcheck.ViewModel.MainViewModel
 import com.example.wellcheck.databinding.ActivityTopDoctorsBinding
 class TopDoctorsActivity : AppCompatActivity() {
@@ -34,22 +32,5 @@ class TopDoctorsActivity : AppCompatActivity() {
         backBtn.setOnClickListener { finish() }
     }
 }
-//    private fun innitTopDoctors() {
-//    binding.apply {
-//        viewTopDoctorList.layoutManager =
-//            LinearLayoutManager(this@TopDoctorsActivity, LinearLayoutManager.VERTICAL, false)
-//        val adapter = TopDoctorAdapter(mutableListOf()) // Empty list initially
-//        viewTopDoctorList.adapter = adapter
-//
-//        viewModel.doc.observe(this@TopDoctorsActivity, Observer { doctors ->
-//            adapter.items.clear()
-//            adapter.items.addAll(doctors) // Update data in adapter
-//            adapter.notifyDataSetChanged()
-//            progressBarTopDoc.visibility = View.GONE
-//        })
-//        viewModel.loadDoctors()
-//        backBtn.setOnClickListener { finish() }
-//    }
-//}
 
 }

@@ -95,9 +95,7 @@ class PartialLogin : AppCompatActivity() {
             if (snapshot.exists()) {
                 val doctor = snapshot.getValue(Doctors::class.java)
                 if (doctor != null) {
-                    // Navigate to the `west` activity and pass the doctor data
-                   // val doctor = Doctors("Dr. John", "Biography", "Address", "Specialty", "Location", "Mobile", "Patients", "Website", "www.ggogle.com", 3.5, 10.0)
-                    val intent = Intent(this, west::class.java)
+                     val intent = Intent(this, west::class.java)
                     intent.putExtra("doctor", doctor) // Make sure you are passing a Doctors object
                     startActivity(intent)
 

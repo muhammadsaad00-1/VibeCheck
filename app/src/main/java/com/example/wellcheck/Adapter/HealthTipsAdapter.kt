@@ -1,13 +1,11 @@
 package com.example.wellcheck.Adapter
-import android.content.Context
+
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
-import com.example.wellcheck.Domain.CategoryClass
-import com.example.wellcheck.databinding.ViewholderCategoryBinding
-import com.bumptech.glide.Glide
+
 import com.example.wellcheck.Domain.HealthTip
 import com.example.wellcheck.R
 import java.text.SimpleDateFormat

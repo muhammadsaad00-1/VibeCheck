@@ -57,7 +57,7 @@ class Fpass : AppCompatActivity() {
 
             val intent = Intent(this, com.example.wellcheck.Activity.Intro::class.java)
             startActivity(intent)
-            finish() // Finish the current activity
+            finish()
         }
     }
 }

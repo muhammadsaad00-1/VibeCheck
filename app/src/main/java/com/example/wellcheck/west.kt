@@ -11,7 +11,7 @@ import com.bumptech.glide.Glide
 import com.example.wellcheck.Activity.DocNav
 import com.example.wellcheck.Activity.DoctorAppointmentsActivity
 import com.example.wellcheck.Activity.EditDoctorProfile
-import com.example.wellcheck.Activity.NaviActivity
+
 import com.example.wellcheck.Domain.Doctors
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.DataSnapshot

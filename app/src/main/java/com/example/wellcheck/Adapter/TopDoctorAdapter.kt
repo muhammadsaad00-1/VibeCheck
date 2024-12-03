@@ -11,8 +11,7 @@ import com.bumptech.glide.request.RequestOptions
 import com.example.wellcheck.Activity.DetailActivity
 import com.example.wellcheck.Domain.Doctors
 import com.example.wellcheck.databinding.ViewholderTopDoctorBinding
-import com.example.wellcheck.Domain.DoctorsModel
-import com.example.wellcheck.seeProfile
+
 
 
 class TopDoctorAdapter(val items: MutableList<Doctors>): RecyclerView.Adapter<TopDoctorAdapter.Viewholder>() {
