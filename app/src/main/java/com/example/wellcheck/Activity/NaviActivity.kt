@@ -55,7 +55,7 @@ btnUploadReport.setOnClickListener {
 
         btnTip.setOnClickListener {
 
-            val intent = Intent(this, PillReminder::class.java)
+            val intent = Intent(this, ViewRemindersActivity::class.java)
 
             startActivity(intent)
         }
