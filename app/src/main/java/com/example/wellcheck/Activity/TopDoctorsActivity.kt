@@ -8,6 +8,7 @@ import androidx.core.view.WindowInsetsCompat
 import androidx.lifecycle.Observer
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.wellcheck.Adapter.TopDoctorAdapter
+import com.example.wellcheck.Adapter.TopDoctorAdapter2
 import com.example.wellcheck.R
 import com.example.wellcheck.ViewModel.MainViewModel
 import com.example.wellcheck.databinding.ActivityTopDoctorsBinding

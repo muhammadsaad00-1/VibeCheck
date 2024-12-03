@@ -113,7 +113,7 @@
                     app:srcCompat="@drawable/banner" />
 
                 <EditText
-                    android:id="@+id/editTextText3"
+                    android:id="@+id/searchi"
                     android:layout_width="0dp"
                     android:layout_height="58dp"
                     android:layout_marginTop="160dp"

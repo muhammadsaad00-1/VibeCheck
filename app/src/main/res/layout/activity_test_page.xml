@@ -2,12 +2,14 @@
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:padding="16dp">
+    android:padding="16dp"
+    android:background="@color/lavender"> <!-- Lavender background -->
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="vertical">
+        android:orientation="vertical"
+        android:gravity="center">
 
         <!-- Patient Info Section -->
         <LinearLayout
@@ -15,7 +17,9 @@
             android:layout_height="wrap_content"
             android:orientation="vertical"
             android:padding="16dp"
-            android:background="@drawable/card_background">
+            android:background="@drawable/card_background"
+            android:elevation="6dp"
+            android:layout_marginBottom="16dp">
 
             <TextView
                 android:id="@+id/tvName"
@@ -50,7 +54,7 @@
                 android:textColor="@android:color/black" />
         </LinearLayout>
 
-        <!-- Buttons -->
+        <!-- Buttons Section -->
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -63,37 +67,32 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Edit Profile"
-                android:backgroundTint="@color/purple_200"
-                android:textColor="@android:color/white" />
+                android:backgroundTint="@android:color/white"
+                android:textColor="@android:color/black"
+                android:layout_marginEnd="16dp"
+                android:padding="12dp" />
 
             <Button
                 android:id="@+id/btnUploadFiles"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="16dp"
                 android:text="Upload Files"
-                android:backgroundTint="@color/purple_200"
-                android:textColor="@android:color/white" />
-
-        </LinearLayout>
-        <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:gravity="center"
-            android:layout_marginTop="20dp">
-
+                android:backgroundTint="@android:color/white"
+                android:textColor="@android:color/black"
+                android:padding="12dp" />
         </LinearLayout>
 
+        <!-- See Appointments Button -->
         <Button
             android:id="@+id/btnSeeAppointments"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_gravity="left"
             android:layout_marginStart="100dp"
-            android:backgroundTint="@color/purple_200"
+            android:layout_marginTop="20dp"
+            android:backgroundTint="@android:color/white"
+            android:padding="12dp"
             android:text="See Appointments"
-            android:textColor="@android:color/white">
-
-        </Button>
+            android:textColor="@android:color/black" />
     </LinearLayout>
 </ScrollView>

@@ -1,10 +1,14 @@
 package com.example.wellcheck.Activity
 
 import android.annotation.SuppressLint
+import android.app.DatePickerDialog
+import android.app.TimePickerDialog
 import android.os.Bundle
 import android.view.View
 import android.widget.TextView
+import android.widget.Toast
 import androidx.activity.enableEdgeToEdge
+import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
@@ -37,7 +41,62 @@ class AT : AppCompatActivity() {
         tvNoBookings = findViewById(R.id.tvNoBookings)
 
         rvBookings.layoutManager = LinearLayoutManager(this)
-        bookingsAdapter = BookingsAdapter(bookingList)
+        bookingsAdapter = BookingsAdapter(bookingList,
+            onCancel = { booking ->
+                AlertDialog.Builder(this)
+                    .setTitle("Cancel Appointment")
+                    .setMessage("Are you sure you want to cancel this appointment?")
+                    .setPositiveButton("Yes") { _, _ ->
+                        val bookingId = booking.bookingId ?: return@setPositiveButton
+                        val bookingIndex = bookingList.indexOf(booking)
+
+                        // Remove from database
+                        databaseRef.child(bookingId).removeValue().addOnSuccessListener {
+                            // Remove from list only after success
+                            bookingList.removeAt(bookingIndex)
+                            bookingsAdapter.notifyItemRemoved(bookingIndex)
+
+                            // Show or hide "No Bookings" message
+                            tvNoBookings.visibility = if (bookingList.isEmpty()) View.VISIBLE else View.GONE
+                        }.addOnFailureListener {
+                            Toast.makeText(this, "Failed to cancel appointment", Toast.LENGTH_SHORT).show()
+                        }
+                    }
+                    .setNegativeButton("No", null)
+                    .show()
+            }
+
+            ,
+            onReschedule = { booking ->
+                if (booking.status == "Pending") {
+                    // Show a DatePickerDialog
+                    val datePicker = DatePickerDialog(this, { _, year, month, dayOfMonth ->
+                        val newDate = "$dayOfMonth-${month + 1}-$year"
+
+                        // Show a TimePickerDialog after selecting the date
+                        val timePicker = TimePickerDialog(this, { _, hourOfDay, minute ->
+                            val newTime = String.format("%02d:%02d", hourOfDay, minute)
+
+                            // Update both date and time in the database
+                            databaseRef.child(booking.bookingId!!).updateChildren(
+                                mapOf("date" to newDate, "time" to newTime)
+                            ).addOnSuccessListener {
+                                booking.date = newDate
+                                booking.time = newTime
+                                bookingsAdapter.notifyDataSetChanged()
+                            }.addOnFailureListener {
+                                // Handle failure
+                            }
+                        }, 12, 0, true)
+                        timePicker.show()
+
+                    }, 2024, 0, 1)
+                    datePicker.show()
+                }
+            }
+        )
+        rvBookings.adapter = bookingsAdapter
+
         rvBookings.adapter = bookingsAdapter
 
         loadBookings()
@@ -59,7 +118,7 @@ class AT : AppCompatActivity() {
                                 doctorsRef.child(b.doctorId!!).addListenerForSingleValueEvent(object : ValueEventListener {
                                     override fun onDataChange(doctorSnapshot: DataSnapshot) {
                                         b.doctorName = doctorSnapshot.child("name").value?.toString() ?: "Unknown Doctor"
-                                       // b.doctorSpeciality = doctorSnapshot.child("speciality").value?.toString() ?: "Unknown Speciality"
+                                        // b.doctorSpeciality = doctorSnapshot.child("speciality").value?.toString() ?: "Unknown Speciality"
                                         bookingList.add(b)
                                         fetchedBookings++
                                         checkAndNotify(totalBookings, fetchedBookings)

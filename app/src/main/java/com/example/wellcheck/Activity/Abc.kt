@@ -150,7 +150,13 @@ class Abc : AppCompatActivity() {
 
         // Set click listener for the navigation button
         binding.btnNav.setOnClickListener {
-            startActivity(Intent(this@Abc, NaviActivity::class.java))
+
+            val intent = Intent(this, NaviActivity::class.java)
+
+            startActivity(intent)
+        }
+        binding.searchi.setOnClickListener{
+            startActivity(Intent(this@Abc, SearchActivity::class.java))
         }
         initCategory()
         innitTopDoctors()

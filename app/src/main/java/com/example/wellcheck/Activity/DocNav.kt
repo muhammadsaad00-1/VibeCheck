@@ -1,64 +1,58 @@
 package com.example.wellcheck.Activity
-
-
+import android.annotation.SuppressLint
 import android.content.Intent
 import android.os.Bundle
 import android.widget.Button
+import android.widget.ImageView
 import androidx.appcompat.app.AppCompatActivity
+import com.example.wellcheck.Domain.Doctors
 import com.example.wellcheck.R
-import com.example.wellcheck.Activity.Abc
-import com.example.wellcheck.Activity.Issue
-import com.example.wellcheck.Activity.Bmi
-import com.example.wellcheck.Activity.Aboutus
-import com.example.wellcheck.Activity.Donate
-import com.example.wellcheck.Domain.PillReminder
 import com.example.wellcheck.TestPage
-import com.example.wellcheck.UploadFiles
+import com.example.wellcheck.west
 
-class NaviActivity : AppCompatActivity() {
+
+class DocNav : AppCompatActivity() {
+
+    private lateinit var doctor: Doctors
+    @SuppressLint("MissingInflatedId")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_navi)
+        setContentView(R.layout.activity_doc_nav)
 
-        // Initialize buttons
         val btnHome = findViewById<Button>(R.id.btn_home)
         val btnBmiCalculator = findViewById<Button>(R.id.btn_bmi_calculator)
-        val btnProfile = findViewById<Button>(R.id.btn_profile)
-        val btnTip = findViewById<Button>(R.id.btn_tip)
+
         val btnDonate = findViewById<Button>(R.id.btn_donate)
         val btnAboutUs = findViewById<Button>(R.id.btn_aboutus)
-        val btnReportIssue = findViewById<Button>(R.id.btn_reportissue) // Add Report Issue Button
-        val btnUploadReport = findViewById<Button>(R.id.btn_upload_report) // Add Upload Report Button
+        val btnReportIssue = findViewById<Button>(R.id.btn_reportissue)
 
-        // Set click listeners for each button
+        val btnSwitchAccount = findViewById<Button>(R.id.btn_switchacc)
+
+        val crossButton = findViewById<ImageView>(R.id.img_close)
+        doctor = intent.getParcelableExtra("doctor") ?: return
+        intent.putExtra("doctor", doctor)
+
         btnHome.setOnClickListener {
-            val intent = Intent(this, Abc::class.java)
+            val intent = Intent(this, EditDoctorProfile::class.java)
             startActivity(intent)
         }
-btnUploadReport.setOnClickListener {
-    val intent = Intent(this, UploadFiles::class.java)
-    startActivity(intent)
-}
         btnBmiCalculator.setOnClickListener {
             val intent = Intent(this, Bmi::class.java)
             startActivity(intent)
         }
+
         btnReportIssue.setOnClickListener {
             val intent = Intent(this, Issue::class.java)
             startActivity(intent)
         }
 
-        btnProfile.setOnClickListener {
-            val intent = Intent(this, TestPage::class.java)
-        startActivity(intent)
-        }
 
-        btnTip.setOnClickListener {
 
-            val intent = Intent(this, PillReminder::class.java)
-
-            startActivity(intent)
-        }
+        // Uncomment and update when Daily Tips Activity is available
+        // btnTip.setOnClickListener {
+        //     val intent = Intent(this, DailyTipsActivity::class.java)
+        //     startActivity(intent)
+        // }
 
         btnDonate.setOnClickListener {
             val intent = Intent(this, Donate::class.java)
@@ -70,5 +64,14 @@ btnUploadReport.setOnClickListener {
             startActivity(intent)
         }
 
+        btnSwitchAccount.setOnClickListener {
+            val intent = Intent(this, Intro::class.java)
+            startActivity(intent)
+        }
+
+
+        crossButton.setOnClickListener {
+            finish()
+        }
     }
 }

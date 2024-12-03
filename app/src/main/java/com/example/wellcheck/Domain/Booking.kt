@@ -5,7 +5,7 @@ data class Booking(
     val patientId: String = "",
     val doctorId: String = "",
     var doctorName: String ="",
-    val date: String = "",
-    val time: String = "",
+    var date: String = "",
+    var time: String = "",
     var status: String = "Pending" // Default status is "Pending"
 )

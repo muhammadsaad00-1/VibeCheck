@@ -1,31 +1,34 @@
 package com.example.wellcheck.Activity
-
+import android.annotation.SuppressLint
 import android.content.Intent
 import android.os.Bundle
 import android.widget.Button
-import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import com.example.wellcheck.R
-import androidx.drawerlayout.widget.DrawerLayout
-import android.view.MenuItem
-import androidx.appcompat.app.ActionBarDrawerToggle
-
+import com.example.wellcheck.Login
+import com.example.wellcheck.PartialLogin
 
 class Intro : AppCompatActivity() {
-    private lateinit var btnLetsGo: Button  // Use Button instead of EditText
 
+    @SuppressLint("MissingInflatedId")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        enableEdgeToEdge()
         setContentView(R.layout.activity_intro)
 
-        // Correctly reference the button
-        btnLetsGo = findViewById(R.id.button)
+        val loginDoctorButton: Button = findViewById(R.id.btn_login_doctor)
+        val loginPatientButton: Button = findViewById(R.id.btn_login_patient)
 
-        // Set OnClickListener to navigate to the next screen (Abc.kt) when the button is pressed
-        btnLetsGo.setOnClickListener {
-            val intent = Intent(this, Abc::class.java)  // Create an intent to navigate to Abc
-            startActivity(intent)  // Start the activity
+
+        loginDoctorButton.setOnClickListener {
+
+            val intent = Intent(this, PartialLogin::class.java)
+            startActivity(intent)
+        }
+
+        loginPatientButton.setOnClickListener {
+
+            val intent = Intent(this, Login::class.java)
+            startActivity(intent)
         }
     }
 }

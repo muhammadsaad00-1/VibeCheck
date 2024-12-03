@@ -1,0 +1,43 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:padding="16dp"
+    tools:context=".Activity.PostTipActivity">
+
+    <!-- RecyclerView to display tips -->
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/tipsRecyclerView"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_above="@+id/postTipLayout"
+        android:layout_alignParentTop="true"
+        android:scrollbars="vertical"/>
+
+    <!-- Layout for posting a new tip -->
+    <LinearLayout
+        android:id="@+id/postTipLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:orientation="horizontal"
+        android:padding="8dp"
+        android:background="@color/lavender">
+
+        <EditText
+            android:id="@+id/tipEditText"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:hint="Write a health tip"
+            android:padding="8dp"/>
+
+        <Button
+            android:id="@+id/postTipButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Post Tip"
+            android:layout_marginLeft="8dp"/>
+    </LinearLayout>
+
+</RelativeLayout>

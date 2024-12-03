@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.SearchView
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.wellcheck.Adapter.TopDoctorAdapter2
+import com.example.wellcheck.Domain.Doctors
 import com.example.wellcheck.Domain.DoctorsModel
 import com.example.wellcheck.databinding.ActivitySearchBinding
 import com.google.firebase.database.*
@@ -13,8 +14,8 @@ class SearchActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivitySearchBinding
     private lateinit var doctorAdapter: TopDoctorAdapter2
-    private var doctorList = mutableListOf<DoctorsModel>()
-    private var filteredList = mutableListOf<DoctorsModel>()
+    private var doctorList = mutableListOf<Doctors>()
+    private var filteredList = mutableListOf<Doctors>()
     private lateinit var databaseReference: DatabaseReference // Firebase Realtime Database reference
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -28,7 +29,7 @@ class SearchActivity : AppCompatActivity() {
         binding.doctorRecyclerView.adapter = doctorAdapter
 
         // Initialize Firebase Database reference to the "Doctors" node
-        databaseReference = FirebaseDatabase.getInstance().getReference("Doctors")
+        databaseReference = FirebaseDatabase.getInstance().getReference("doctors")
 
         // Fetch doctor data from the Realtime Database
         fetchDoctorsFromDatabase()
@@ -52,7 +53,7 @@ class SearchActivity : AppCompatActivity() {
             override fun onDataChange(snapshot: DataSnapshot) {
                 doctorList.clear() // Clear the existing list to avoid duplicates
                 for (itemSnapshot in snapshot.children) {
-                    val doctor = itemSnapshot.getValue(DoctorsModel::class.java)
+                    val doctor = itemSnapshot.getValue(Doctors::class.java)
                     if (doctor != null) {
                         doctorList.add(doctor)
                     }
@@ -77,7 +78,7 @@ class SearchActivity : AppCompatActivity() {
         } else {
             // Filter doctors by the "Special" field
             for (doctor in doctorList) {
-                if (doctor.Special?.contains(query, ignoreCase = true) == true) {
+                if (doctor.special?.contains(query, ignoreCase = true) == true) {
                     filteredList.add(doctor)
                 }
             }

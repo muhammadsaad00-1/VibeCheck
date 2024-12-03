@@ -6,6 +6,8 @@ import android.widget.Button
 import android.widget.EditText
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
+import com.example.wellcheck.Activity.DoctorSignupActivity
+import com.example.wellcheck.Activity.Fpass
 import com.example.wellcheck.Domain.Doctors
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.FirebaseDatabase
@@ -15,7 +17,9 @@ class PartialLogin : AppCompatActivity() {
     private lateinit var edtEmail: EditText
     private lateinit var edtPass: EditText
     private lateinit var btnLogin: Button
+    private lateinit var btnSignUp: Button
     private lateinit var mAuth: FirebaseAuth
+    private lateinit var btnForgetPassword: Button
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -26,7 +30,13 @@ class PartialLogin : AppCompatActivity() {
         edtEmail = findViewById(R.id.edt_email)
         edtPass = findViewById(R.id.edt_pass)
         btnLogin = findViewById(R.id.btn_login)
+        btnSignUp = findViewById(R.id.btn_SignUp)
+        btnForgetPassword = findViewById(R.id.btn_Forget_password)
 
+        btnSignUp.setOnClickListener {
+            val intent = Intent(this, DoctorSignupActivity::class.java)
+            startActivity(intent)
+        }
         btnLogin.setOnClickListener {
             val email = edtEmail.text.toString().trim()
             val password = edtPass.text.toString().trim()
@@ -37,6 +47,16 @@ class PartialLogin : AppCompatActivity() {
             }
 
             login(email, password)
+        }
+        btnForgetPassword.setOnClickListener {
+            val intent = Intent(this, Fpass::class.java)
+            startActivity(intent)
+            val email = edtEmail.text.toString()
+            if (email.isEmpty()) {
+                Toast.makeText(this, "Please enter your email to reset the password", Toast.LENGTH_SHORT).show()
+            } else {
+                resetPassword(email)
+            }
         }
     }
 
@@ -57,7 +77,18 @@ class PartialLogin : AppCompatActivity() {
                 }
             }
     }
-
+    private fun resetPassword(email: String) {
+        mAuth.sendPasswordResetEmail(email)
+            .addOnCompleteListener { task ->
+                if (task.isSuccessful) {
+                    Toast.makeText(this, "Password reset email sent to $email", Toast.LENGTH_SHORT).show()
+                    val intent = Intent(this, Fpass::class.java)
+                    startActivity(intent)
+                } else {
+                    Toast.makeText(this, "Error in sending reset email", Toast.LENGTH_SHORT).show()
+                }
+            }
+    }
     private fun fetchDoctorData(userId: String) {
         val databaseRef = FirebaseDatabase.getInstance().getReference("doctors").child(userId)
         databaseRef.get().addOnSuccessListener { snapshot ->

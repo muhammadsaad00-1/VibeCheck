@@ -2,6 +2,7 @@
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/lavender"
     android:padding="16dp">
 
     <LinearLayout
@@ -15,15 +16,18 @@
             android:layout_width="100dp"
             android:layout_height="100dp"
             android:layout_gravity="center"
-            android:src="@drawable/ic_launcher_background"
-            android:scaleType="centerCrop" />
+            android:src="@drawable/profile"
+            android:scaleType="centerCrop"
+            />
 
         <Button
             android:id="@+id/btnUploadPicture"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Upload Picture"
-            android:layout_gravity="center" />
+            android:layout_gravity="center"
+            android:background="@color/design_default_color_primary"
+            android:textColor="@color/white"/>
         <EditText
             android:id="@+id/etName"
             android:layout_width="match_parent"
@@ -42,11 +46,13 @@
             android:layout_height="wrap_content"
             android:hint="Address" />
 
-        <EditText
-            android:id="@+id/etSpecial"
+        <Spinner
+            android:id="@+id/spSpecialization"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:entries="@array/specialization_array"
             android:hint="Specialization" />
+
 
         <EditText
             android:id="@+id/etLocation"
@@ -104,6 +110,8 @@
             android:id="@+id/btnSignup"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Sign Up" />
+            android:text="Sign Up"
+            android:background="@color/design_default_color_primary"
+            android:textColor="@color/white"/>
     </LinearLayout>
 </ScrollView>

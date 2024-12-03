@@ -8,10 +8,11 @@ import com.bumptech.glide.Glide
 import com.bumptech.glide.load.resource.bitmap.CenterCrop
 import com.bumptech.glide.request.RequestOptions
 import com.example.wellcheck.Activity.DetailActivity
+import com.example.wellcheck.Domain.Doctors
 import com.example.wellcheck.databinding.ViewholderTopDoctorBinding
 import com.example.wellcheck.Domain.DoctorsModel
 import com.example.wellcheck.databinding.ViewholderTopDoctors2Binding
-class TopDoctorAdapter2(val items: MutableList<DoctorsModel>): RecyclerView.Adapter<TopDoctorAdapter2.Viewholder>() {
+class TopDoctorAdapter2(val items: MutableList<Doctors>): RecyclerView.Adapter<TopDoctorAdapter2.Viewholder>() {
     private var context:Context?= null
     class Viewholder(val binding: ViewholderTopDoctors2Binding) : RecyclerView.ViewHolder(binding.root)
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): TopDoctorAdapter2.Viewholder {
@@ -20,12 +21,12 @@ class TopDoctorAdapter2(val items: MutableList<DoctorsModel>): RecyclerView.Adap
         return Viewholder(binding)
     }
     override fun onBindViewHolder(holder: TopDoctorAdapter2.Viewholder, position: Int) {
-        holder.binding.nameTxt.text=items[position].Name
-        holder.binding.specialTxt.text=items[position].Special
-        holder.binding.scoreTxt.text=items[position].Rating.toString()
-        holder.binding.ratingBar.rating=items[position].Rating.toFloat()
+        holder.binding.nameTxt.text=items[position].name
+        holder.binding.specialTxt.text=items[position].special
+        holder.binding.scoreTxt.text=items[position].rating.toString()
+        holder.binding.ratingBar.rating=items[position].rating.toFloat()
         Glide.with(holder.itemView.context)
-            .load(items[position].Picture)
+            .load(items[position].picture)
             .apply{RequestOptions().transform(CenterCrop())}
             .into(holder.binding.img)
         holder.binding.makeBtn.setOnClickListener{

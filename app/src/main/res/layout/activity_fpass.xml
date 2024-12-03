@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="16dp"
+    android:background="@color/lavender">
+
+    <!-- Title -->
+    <TextView
+        android:id="@+id/tv_forgot_password_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Forgot Password"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        android:textColor="@color/white"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="24dp" />
+
+    <!-- Email Input -->
+    <EditText
+        android:id="@+id/et_email"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Enter your email"
+        android:inputType="textEmailAddress"
+
+        android:padding="12dp"
+        android:textColor="@color/black"
+        android:layout_below="@id/tv_forgot_password_title"
+        android:layout_marginTop="16dp" />
+
+    <!-- Reset Password Button -->
+    <Button
+        android:id="@+id/btn_reset_password"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Reset Password"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        android:backgroundTint="@color/white"
+        android:textColor="@color/black"
+        android:layout_below="@id/et_email"
+        android:layout_marginTop="16dp" />
+
+    <!-- Go Back Button -->
+    <Button
+        android:id="@+id/btn_Go_back"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Back to Login"
+        android:textSize="16sp"
+        android:layout_below="@id/btn_reset_password"
+        android:layout_marginTop="16dp"
+
+        android:textColor="@color/black" />
+
+</RelativeLayout>

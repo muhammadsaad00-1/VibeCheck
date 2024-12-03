@@ -8,6 +8,7 @@ import android.widget.*
 import androidx.appcompat.app.AppCompatActivity
 import com.bumptech.glide.Glide
 import com.example.wellcheck.Domain.Doctors
+import com.example.wellcheck.PartialLogin
 import com.example.wellcheck.R
 import com.example.wellcheck.west
 import com.google.firebase.auth.FirebaseAuth
@@ -20,7 +21,8 @@ class DoctorSignupActivity : AppCompatActivity() {
     private lateinit var etName: EditText
     private lateinit var etBiography: EditText
     private lateinit var etAddress: EditText
-    private lateinit var etSpecial: EditText
+    private lateinit var spSpecialization: Spinner
+
     private lateinit var etLocation: EditText
     private lateinit var etMobile: EditText
     private lateinit var etPatients: EditText
@@ -51,7 +53,8 @@ class DoctorSignupActivity : AppCompatActivity() {
         etName = findViewById(R.id.etName)
         etBiography = findViewById(R.id.etBiography)
         etAddress = findViewById(R.id.etAddress)
-        etSpecial = findViewById(R.id.etSpecial)
+        spSpecialization = findViewById(R.id.spSpecialization)
+
         etLocation = findViewById(R.id.etLocation)
         etMobile = findViewById(R.id.etMobile)
         etPatients = findViewById(R.id.etPatients)
@@ -87,7 +90,7 @@ class DoctorSignupActivity : AppCompatActivity() {
         val name = etName.text.toString()
         val biography = etBiography.text.toString()
         val address = etAddress.text.toString()
-        val special = etSpecial.text.toString()
+        val special = spSpecialization.selectedItem.toString()
         val location = etLocation.text.toString()
         val mobile = etMobile.text.toString()
         val patients = etPatients.text.toString()
@@ -99,6 +102,10 @@ class DoctorSignupActivity : AppCompatActivity() {
 
         if (name.isEmpty() || email.isEmpty() || password.isEmpty() || imageUri == null) {
             Toast.makeText(this, "Please fill all fields and upload a picture!", Toast.LENGTH_SHORT).show()
+            return
+        }
+        if (special.isEmpty() || special == "Specialization") {
+            Toast.makeText(this, "Please select a specialization", Toast.LENGTH_SHORT).show()
             return
         }
 
@@ -159,7 +166,7 @@ class DoctorSignupActivity : AppCompatActivity() {
         database.child(doctorId).setValue(doctor)
             .addOnCompleteListener { task ->
                 if (task.isSuccessful) {
-                    val intent = Intent(this, west::class.java) // Directly navigate to the doctor details page
+                    val intent = Intent(this, PartialLogin::class.java) // Directly navigate to the doctor details page
                     intent.putExtra("doctor", doctor) // Pass doctor data to WestActivity
                     startActivity(intent)
                     finish()

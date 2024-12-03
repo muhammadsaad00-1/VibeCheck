@@ -1,145 +1,214 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ScrollView
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/white"
+    tools:context=".west">
+<androidx.appcompat.widget.Toolbar
+    android:id="@+id/toolbar"
+    android:layout_width="0dp"
+    android:layout_height="wrap_content"
+    android:background="@color/white"
+    app:layout_constraintTop_toTopOf="parent"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintEnd_toEndOf="parent"
+    android:elevation="4dp"
+    app:title="">
+
+    <ImageView
+        android:id="@+id/btn_nav"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_gravity="start"
+        android:contentDescription="Navigation Button"
+        android:src="@drawable/meenu"
+
+        android:padding="8dp"
+        android:layout_marginStart="8dp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:text="Home"
+        android:textSize="20sp"
+        android:textColor="@color/black"
+        android:textStyle="bold" />
+</androidx.appcompat.widget.Toolbar>
+<ScrollView
+    android:id="@+id/scrollView"
+    android:layout_width="0dp"
+    android:layout_height="0dp"
     android:padding="16dp"
-    android:background="#FFFFFF">
+    android:background="@color/lavender"
+    app:layout_constraintTop_toBottomOf="@id/toolbar"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintEnd_toEndOf="parent"
+    app:layout_constraintBottom_toBottomOf="parent">
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="vertical"
-        android:gravity="center_horizontal">
+        android:gravity="center_horizontal"
+        android:orientation="vertical">
 
-        <!-- Profile Picture -->
-
+        <!-- Profile Picture (Add an ImageView if needed) -->
+        <ImageView
+            android:id="@+id/profile_picture"
+            android:layout_width="150dp"
+            android:layout_height="150dp"
+            android:layout_centerHorizontal="true"
+            android:layout_marginBottom="20dp"
+            android:contentDescription="Profile Picture"
+            android:src="@drawable/profile" />
 
         <!-- Doctor Name -->
         <TextView
             android:id="@+id/tvName"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginBottom="8dp"
             android:text="Doctor Name"
+            android:textColor="@color/white"
             android:textSize="24sp"
-            android:textStyle="bold"
-            android:textColor="#333333"
-            android:layout_marginBottom="8dp" />
+            android:textStyle="bold" />
 
         <!-- Biography -->
         <TextView
             android:id="@+id/tvBiography"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginBottom="16dp"
+            android:padding="8dp"
             android:text="Biography not available"
-            android:textSize="16sp"
-            android:textColor="#666666"
-            android:layout_marginBottom="16dp" />
+            android:textColor="@color/white"
+            android:textSize="16sp" />
 
         <!-- Address -->
         <TextView
             android:id="@+id/tvAddress"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginBottom="8dp"
+            android:padding="8dp"
             android:text="Address not available"
-            android:textSize="16sp"
-            android:textColor="#666666"
-            android:layout_marginBottom="8dp" />
+            android:textColor="@color/white"
+            android:textSize="16sp" />
 
         <!-- Specialization -->
         <TextView
             android:id="@+id/tvSpecial"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginBottom="8dp"
+            android:padding="8dp"
             android:text="Specialization not mentioned"
-            android:textSize="16sp"
-            android:textColor="#666666"
-            android:layout_marginBottom="8dp" />
+            android:textColor="@color/white"
+            android:textSize="16sp" />
 
         <!-- Location -->
         <TextView
             android:id="@+id/tvLocation"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginBottom="8dp"
+            android:padding="8dp"
             android:text="Location not available"
-            android:textSize="16sp"
-            android:textColor="#666666"
-            android:layout_marginBottom="8dp" />
+            android:textColor="@color/white"
+            android:textSize="16sp" />
 
         <!-- Mobile -->
         <TextView
             android:id="@+id/tvMobile"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginBottom="8dp"
+            android:padding="8dp"
             android:text="Mobile not available"
-            android:textSize="16sp"
-            android:textColor="#666666"
-            android:layout_marginBottom="8dp" />
+            android:textColor="@color/white"
+            android:textSize="16sp" />
 
         <!-- Patients -->
         <TextView
             android:id="@+id/tvPatients"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginBottom="8dp"
+            android:padding="8dp"
             android:text="No patients data"
-            android:textSize="16sp"
-            android:textColor="#666666"
-            android:layout_marginBottom="8dp" />
+            android:textColor="@color/white"
+            android:textSize="16sp" />
 
         <!-- Website -->
         <TextView
             android:id="@+id/tvSite"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginBottom="8dp"
+            android:padding="8dp"
             android:text="No site information"
-            android:textSize="16sp"
-            android:textColor="#666666"
-            android:layout_marginBottom="8dp" />
+            android:textColor="@color/white"
+            android:textSize="16sp" />
 
         <!-- Rating -->
         <TextView
             android:id="@+id/tvRating"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginBottom="8dp"
+            android:padding="8dp"
             android:text="Rating: Not rated"
-            android:textSize="16sp"
-            android:textColor="#666666"
-            android:layout_marginBottom="8dp" />
+
+            android:textColor="@color/white"
+            android:textSize="16sp" />
 
         <!-- Experience -->
         <TextView
             android:id="@+id/tvExperience"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginBottom="16dp"
+            android:padding="8dp"
             android:text="Experience: 0 years"
-            android:textSize="16sp"
-            android:textColor="#666666"
-            android:layout_marginBottom="16dp" />
+            android:textColor="@color/white"
+            android:textSize="16sp" />
+
+        <!-- Buttons -->
         <Button
             android:id="@+id/btnn"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginBottom="16dp"
+            android:background="@color/design_default_color_primary"
+            android:padding="12dp"
             android:text="Go to Good Display"
-            android:textColor="@color/blue"
-            android:background="@color/lavender"
-            android:layout_marginBottom="16dp" />
+            android:textColor="@color/white" />
+
         <Button
             android:id="@+id/btnnn"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text=" Go to Edit Profile "
-            android:textColor="@color/blue"
-            android:background="@color/lavender"
-            android:layout_marginBottom="16dp" />
+            android:layout_marginBottom="16dp"
+            android:background="@color/design_default_color_primary"
+            android:padding="12dp"
+            android:text="Go to Edit Profile"
+            android:textColor="@color/white" />
+
         <Button
             android:id="@+id/bt"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginBottom="16dp"
+            android:background="@color/design_default_color_primary"
+            android:padding="12dp"
             android:text="Go to Appointment"
-            android:textColor="@color/blue"
-            android:background="@color/lavender"
-            android:layout_marginBottom="16dp" />
+            android:textColor="@color/white" />
 
     </LinearLayout>
 
 </ScrollView>
+</androidx.constraintlayout.widget.ConstraintLayout>

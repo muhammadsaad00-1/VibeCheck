@@ -1,0 +1,57 @@
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="16dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <!-- Pill Name -->
+        <EditText
+            android:id="@+id/etPillName"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Pill Name"
+            android:inputType="text" />
+
+        <!-- Quantity -->
+        <EditText
+            android:id="@+id/etPillQuantity"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Quantity (per dose)"
+            android:inputType="number" />
+
+        <!-- Duration -->
+        <EditText
+            android:id="@+id/etPillDuration"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Duration (in days)"
+            android:inputType="number" />
+
+        <!-- Frequency -->
+        <EditText
+            android:id="@+id/etPillFrequency"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Times per day"
+            android:inputType="number" />
+
+        <!-- Start Time -->
+        <Button
+            android:id="@+id/btnSetStartTime"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Set Start Time" />
+
+        <!-- Add Reminder -->
+        <Button
+            android:id="@+id/btnAddReminder"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Add Reminder" />
+    </LinearLayout>
+</ScrollView>

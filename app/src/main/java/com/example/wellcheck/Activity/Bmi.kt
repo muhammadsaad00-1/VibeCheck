@@ -1,4 +1,6 @@
+
 package com.example.wellcheck.Activity
+
 import android.os.Bundle
 import android.widget.Button
 import android.widget.EditText
@@ -6,8 +8,6 @@ import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 import com.example.wellcheck.R
 import kotlin.math.pow
-
-
 
 class Bmi : AppCompatActivity() {
 
@@ -24,12 +24,14 @@ class Bmi : AppCompatActivity() {
 
         // Set up calculate button click listener
         calculateButton.setOnClickListener {
-            val heightFeet = heightInput.text.toString().toDoubleOrNull()
+            val heightFeetAndInches = heightInput.text.toString().split(".")
+            val heightFeet = heightFeetAndInches[0].toDoubleOrNull()
+            val heightInches = if (heightFeetAndInches.size > 1) heightFeetAndInches[1].toDoubleOrNull() else 0.0
             val weightKg = weightInput.text.toString().toDoubleOrNull()
 
             if (heightFeet != null && weightKg != null) {
-                // Convert height from feet to meters
-                val heightMeters = heightFeet * 0.3048
+                // Convert height from feet and inches to meters
+                val heightMeters = heightFeet * 0.3048 + (heightInches ?: 0.0) * 0.0254
                 // Calculate BMI
                 val bmi = weightKg / heightMeters.pow(2)
 

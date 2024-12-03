@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/lavender"
+    android:padding="8dp">
+
+    <!-- Cross ImageView at the top-right corner -->
+    <ImageView
+        android:id="@+id/img_close"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_margin="16dp"
+        android:contentDescription="Close"
+        android:src="@drawable/cancel"
+        />
+
+    <!-- ScrollView with buttons -->
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/img_close"
+        android:paddingTop="8dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:gravity="center">
+
+            <Button
+                android:id="@+id/btn_home"
+                android:layout_width="match_parent"
+                android:layout_height="67dp"
+                android:layout_margin="8dp"
+                android:backgroundTint="@color/white"
+                android:text="Home"
+                android:textColor="#000000"
+                android:textStyle="bold" />
+
+            <Button
+                android:id="@+id/btn_bmi_calculator"
+                android:layout_width="match_parent"
+                android:layout_height="67dp"
+                android:layout_margin="8dp"
+                android:backgroundTint="@color/white"
+                android:text="BMI Calculator"
+                android:textColor="#000000"
+                android:textStyle="bold" />
+
+
+            <Button
+                android:id="@+id/btn_profile"
+                android:layout_width="match_parent"
+                android:layout_height="67dp"
+                android:layout_margin="8dp"
+                android:backgroundTint="@color/white"
+                android:text="Profile"
+                android:textColor="#000000"
+                android:textStyle="bold" />
+
+            <Button
+                android:id="@+id/btn_tip"
+                android:layout_width="match_parent"
+                android:layout_height="67dp"
+                android:layout_margin="8dp"
+                android:backgroundTint="@color/white"
+                android:text="Daily Tips"
+                android:textColor="#000000"
+                android:textStyle="bold" />
+
+            <Button
+                android:id="@+id/btn_donate"
+                android:layout_width="match_parent"
+                android:layout_height="67dp"
+                android:layout_margin="8dp"
+                android:backgroundTint="@color/white"
+                android:text="Donate to App"
+                android:textColor="#000000"
+                android:textStyle="bold" />
+
+            <Button
+                android:id="@+id/btn_aboutus"
+                android:layout_width="match_parent"
+                android:layout_height="67dp"
+                android:layout_margin="8dp"
+                android:backgroundTint="@color/white"
+                android:text="About us"
+                android:textColor="#000000"
+                android:textStyle="bold" />
+
+            <Button
+                android:id="@+id/btn_reportissue"
+                android:layout_width="match_parent"
+                android:layout_height="67dp"
+                android:layout_margin="8dp"
+                android:backgroundTint="@color/white"
+                android:text="Report an Issue"
+                android:textColor="#000000"
+                android:textStyle="bold" />
+
+            <Button
+                android:id="@+id/btn_switchacc"
+                android:layout_width="match_parent"
+                android:layout_height="67dp"
+                android:layout_margin="8dp"
+                android:backgroundTint="@color/white"
+                android:text="Switch Account"
+                android:textColor="#000000"
+                android:textStyle="bold" />
+
+        </LinearLayout>
+
+    </ScrollView>
+
+</RelativeLayout>

@@ -1,5 +1,6 @@
 package com.example.wellcheck
 
+import android.annotation.SuppressLint
 import android.content.Intent
 import android.os.Bundle
 import android.widget.Button
@@ -7,8 +8,10 @@ import android.widget.ImageView
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 import com.bumptech.glide.Glide
+import com.example.wellcheck.Activity.DocNav
 import com.example.wellcheck.Activity.DoctorAppointmentsActivity
 import com.example.wellcheck.Activity.EditDoctorProfile
+import com.example.wellcheck.Activity.NaviActivity
 import com.example.wellcheck.Domain.Doctors
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.DataSnapshot
@@ -32,10 +35,22 @@ class west : AppCompatActivity() {
     private lateinit var btnViewProfile: Button
     private lateinit var btnEditProfile: Button
     private lateinit var btnAppointment: Button
+    private lateinit var btnNav: ImageView
+    private lateinit var btnPic: ImageView
+
+    @SuppressLint("MissingInflatedId")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_west)
+        btnNav = findViewById(R.id.btn_nav)
+        btnNav.setOnClickListener {
 
+            getDoctor { doctor ->
+                val intent = Intent(this, DocNav::class.java)
+                intent.putExtra("doctor", doctor)  // Pass doctor data to EditDoctorProfile
+                startActivity(intent)
+            }
+        }
         auth = FirebaseAuth.getInstance()
 
         // Initialize UI components
@@ -52,6 +67,7 @@ class west : AppCompatActivity() {
         btnViewProfile = findViewById(R.id.btnn)
         btnEditProfile = findViewById(R.id.btnnn)
         btnAppointment = findViewById(R.id.bt)
+        btnPic=findViewById(R.id.profile_picture)
         // Load doctor info from Firebase
         loadDoctorInfo()
 
@@ -81,18 +97,18 @@ class west : AppCompatActivity() {
                     val doctor =
                         Doctors(
                             id=snapshot.child("id").value?.toString() ?: "",
-                        name = snapshot.child("name").value?.toString() ?: "",
-                        picture = snapshot.child("picture").value?.toString() ?: "",
-                        biography = snapshot.child("biography").value?.toString() ?: "",
-                        address = snapshot.child("address").value?.toString() ?: "",
-                        special = snapshot.child("special").value?.toString() ?: "",
-                        location = snapshot.child("location").value?.toString() ?: "",
-                        mobile = snapshot.child("mobile").value?.toString() ?: "",
-                        patiens = snapshot.child("patiens").value?.toString() ?: "",
-                        site = snapshot.child("site").value?.toString() ?: "",
-                        rating = snapshot.child("rating").value?.toString()?.toDoubleOrNull() ?: 0.0,
-                        expriense = snapshot.child("expriense").value?.toString()?.toDoubleOrNull() ?: 0.0
-                    )
+                            name = snapshot.child("name").value?.toString() ?: "",
+                            picture = snapshot.child("picture").value?.toString() ?: "",
+                            biography = snapshot.child("biography").value?.toString() ?: "",
+                            address = snapshot.child("address").value?.toString() ?: "",
+                            special = snapshot.child("special").value?.toString() ?: "",
+                            location = snapshot.child("location").value?.toString() ?: "",
+                            mobile = snapshot.child("mobile").value?.toString() ?: "",
+                            patiens = snapshot.child("patiens").value?.toString() ?: "",
+                            site = snapshot.child("site").value?.toString() ?: "",
+                            rating = snapshot.child("rating").value?.toString()?.toDoubleOrNull() ?: 0.0,
+                            expriense = snapshot.child("expriense").value?.toString()?.toDoubleOrNull() ?: 0.0
+                        )
 
                     // Set updated data to the current activity's views
                     tvName.text = "Name: ${doctor.name}"
@@ -107,7 +123,7 @@ class west : AppCompatActivity() {
                     tvExperience.text = "Experience: ${doctor.expriense} years"
 
                     // Optionally, load the profile image using Glide
-                   // Glide.with(this@west).load(doctor.Picture).into(findViewById<ImageView>(R.id.ivProfilePicture))
+                     Glide.with(this@west).load(doctor.picture).into(findViewById<ImageView>(R.id.profile_picture))
 
                     // View profile button click
                     btnViewProfile.setOnClickListener {

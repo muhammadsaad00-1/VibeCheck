@@ -16,7 +16,26 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.WellCheck"
         tools:targetApi="31">
-
+        <activity
+            android:name=".Activity.Fpass"
+            android:exported="true"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
+        <activity
+            android:name=".Activity.DocNav"
+            android:exported="true"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
+        <activity
+            android:name=".Activity.PostTipActivity"
+            android:exported="true"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
+        <activity
+            android:name=".Activity.ViewRemindersActivity"
+            android:exported="true"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
+        <activity
+            android:name=".Activity.AddPillReminderActivity"
+            android:exported="true"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
         <activity
             android:name=".Activity.Aboutus"
             android:exported="true"
@@ -24,7 +43,7 @@
         <activity
             android:name=".Activity.Donate"
             android:exported="true"
-            android:theme="@style/Theme.AppCompat.Light.NoActionBar"/>
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
         <activity
             android:name=".Activity.Issue"
             android:exported="true"
@@ -52,13 +71,7 @@
         <activity
             android:name=".PartialLogin"
             android:exported="true"
-            android:theme="@style/Theme.AppCompat.Light.NoActionBar">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-        </activity>
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
         <activity
             android:name=".west"
             android:exported="true"
@@ -107,22 +120,16 @@
             android:name=".SignUp"
             android:exported="true"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar" /> <!-- This is where you move the MAIN and LAUNCHER intent-filter -->
-        <!--
- <activity
-             android:name=".Activity.Intro"
-             android:exported="true"
-             android:label="@string/title_activity_sign_up"
-             android:theme="@style/Theme.AppCompat.Light.NoActionBar">
+        <activity
+            android:name=".Activity.Intro"
+            android:exported="true"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
 
-
-             <intent-filter>
-                 <action android:name="android.intent.action.MAIN" />
-
-                 <category android:name="android.intent.category.LAUNCHER" />
-             </intent-filter>
-
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
         </activity>
-        -->
         <!--
  Uncomment if needed later for sign-up or login
         <activity
@@ -142,9 +149,7 @@
         <activity
             android:name=".Login"
             android:exported="true"
-            android:theme="@style/Theme.AppCompat.Light.NoActionBar">
-
-        </activity>
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar"></activity>
         <activity
             android:name=".dash"
             android:exported="true"
